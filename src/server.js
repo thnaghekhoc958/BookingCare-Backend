@@ -11,10 +11,10 @@ const rateLimit = require('express-rate-limit');
 const https = require('https');
 const fs = require('fs');
 
-const options = {
-  key: fs.readFileSync(process.env.KEYSSL_KEY),
-  cert: fs.readFileSync(process.env.KEYSSL_CRT)
-};
+// const options = {
+//   key: fs.readFileSync(process.env.KEYSSL_KEY),
+//   cert: fs.readFileSync(process.env.KEYSSL_CRT)
+// };
 
 
 
@@ -34,9 +34,10 @@ let app = express();
 app.disable('x-powered-by')
 helmet.hidePoweredBy()
 app.set('trust proxy', 1);
-https.createServer(options, app).listen(443, () => {
-  console.log("Server running on https://localhost");
-});
+// https.createServer(options, app).listen(443, () => {
+//   console.log("Server running on https://localhost");
+// });
+
 app.use(
     helmet.hsts({
         maxAge: 31536000, // 1 năm
