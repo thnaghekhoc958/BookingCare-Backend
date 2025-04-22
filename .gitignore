@@ -1,0 +1,12 @@
+# /node_modules
+# /vendor
+# /.idea
+# .idea/
+# .env
+
+node_modules/
+.env
+*.log
+.vscode/
+.DS_Store
+npm-debug.log*

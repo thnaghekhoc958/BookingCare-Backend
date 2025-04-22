@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Thêm Bootstrap CSS từ CDN -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>My First EDIT Page</h1>
+      <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Password</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Role ID</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(item => { %>
+          <tr>
+            <th scope="row"><%= item.id %></th>
+            <td><%= item.name %></td>
+            <td><%= item.email %></td>
+            <td><%= item.phonenumber %></td>
+            <td><%= item.address %></td>
+            <td><%= item.password %></td>
+            <td><%= item.gender %></td>
+            <td><%= item.roleId %></td>
+            <td>
+              <a class="btn btn-primary mt-3" href="/edit-data?id=<%= item.id %>" type="button">Edit</a>
+              <a class="btn btn-primary mt-3" href="/delete-crud?id=<%= item.id %>" type="button" >Delete</a>
+              
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Thêm Bootstrap JS và Popper.js từ CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
